@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.copyright {
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.navbar {
+    /* background-color: #FF4500; */
+    background-image: linear-gradient(to right, #003366 0%, #00ccff 100%);
+}

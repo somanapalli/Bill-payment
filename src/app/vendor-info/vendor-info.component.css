@@ -1,0 +1,14 @@
+body {
+	font-family: 'Encode Sans'
+}
+
+
+.space {
+	padding: 30px;
+}
+
+.btn-custom {
+	color: #fff;
+	background-color: #0394fc;
+	border-color:#0394fc;
+}

@@ -1,0 +1,28 @@
+<body>
+    <br><br><br><br>
+
+
+    <div class="h2 mx-auto my-auto" *ngIf="!bill">
+       <h2> No Bill Mapped </h2>
+    </div>
+        <div class="card mb-4 mt-5 center" style="width: 16rem;"  *ngIf=bill>
+              
+            <div class="card-body">
+
+                    <h1>Bill Details</h1><br>
+                <table>
+                    <tr> <td> Bill Type </td> <td> {{items.vendor.vendor_type}}</td> </tr>
+                    <tr> <td> Vendor Name </td> <td> {{items.vendor.uname}}</td> </tr>
+                    <tr> <td> UserName </td> <td> {{items.user.userid}} </td> </tr>
+                    <tr> <td> Consumer No. </td> <td> {{items.consumerid}} </td> </tr>
+                    <tr> <td> Bill Amt.</td><td>{{items.amt}}</td></tr>
+                </table>
+      <div class="ml-5 mt-2">
+                    <button class="button" [routerLink]="['/paymentgateway',items.vendor.uname]" value="Pay final"> Pay Bill</button>
+                </div>
+            </div>
+
+
+    </div>
+
+</body>

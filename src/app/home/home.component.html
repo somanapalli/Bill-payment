@@ -1,0 +1,41 @@
+<div class= "welcome">
+                
+    <div class="center" *ngIf="!authService.admin && !authService.user && !authService.vendor">
+                <br><br><br><br>
+          <img src="https://image.freepik.com/free-vector/online-payment-audit-analyzing-bill-payment-research-illustration-flat-cartoon_101884-450.jpg">
+                <H3>Welcome to Bill Payment System</H3>
+                <h5>One Solution to all your Bills</h5>
+    </div>
+       
+      
+        <div *ngIf="authService.admin" >
+
+               <h3> You have been logged in as: Admin    </h3>
+                <h3>List of Vendors:</h3>
+                <app-admin [vendors]="vendor" *ngFor="let vendor of Vendors" ></app-admin>
+
+        </div>
+
+    
+        <div *ngIf="authService.user" >   
+                <app-search></app-search>
+                <!-- <h5>Available Services</h5> -->
+                <div class="card-deck">
+                        <div class="row mx-auto">
+                                <app-vendor-info [vendors]="vendor" *ngFor="let vendor of Vendors" >
+                                </app-vendor-info>
+                        </div>
+                </div>
+        </div>  
+
+    
+        <div *ngIf="authService.vendor" >
+                <br><br><br>
+           <img src="https://image.freepik.com/free-photo/future-building-construction-engineering-project_31965-2694.jpg">
+
+          <h3>You have been logged in as: Vendor</h3> 
+        </div>
+
+</div>
+
+

@@ -1,0 +1,206 @@
+
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="card mt-5 mb-5">
+                <div class="card-body">
+                    <h1>Edit Vendor Details</h1>
+                    <form [formGroup]="editForm" (submit)="onSubmit()">
+                           <!-- Alert for form submission-->
+                    <div class="alert alert-success" *ngIf="editDone"> Vendor Details Modified Successfully. </div>
+    
+                        <!--Username Details-->
+                        <!-- <div class="row"> -->
+                            <div class="form-group mr-5">
+                            <label>UserName</label><br>
+                            <!-- {{this.vendor.uname}} -->
+                            <input type="text" class="form-control" placeholder="Enter username" formControlName="uname"
+                                id="uname"> 
+                            <div class="validation-text"
+                                *ngIf="uname.invalid && uname.errors.required && uname.touched">
+                                Username is required</div>
+                        </div>
+                                            
+                        <!--First Name and Last Name Detailss-->
+                        <div class="row">
+                            <div class="form-group mr-5">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" placeholder="Enter Name"
+                                    formControlName="name" id="name">
+                                <div class="validation-text"
+                                    *ngIf="name.invalid && name.errors.required && name.touched">Name
+                                    is required</div>
+                            </div>
+    
+                            <div class="form-group">
+                                <label for="reg_no">Company Registratio No.</label>
+                                <input type="text" class="form-control" placeholder="Enter Company Registration No."
+                                    formControlName="reg_no" id="reg_no">
+                                <div class="validation-text"
+                                    *ngIf="reg_no.invalid && reg_no.errors.required && reg_no.touched">Registration No. is
+                                    required</div>
+                            </div>
+                        </div>
+                            <!-- gender and age-->
+                        <div class="row">
+                                <div class="form-group mr-5">
+                                        <label for="vendor_type">Select Vendor Type</label>
+    
+                                        <select class="form-control" placeholder="Vendor type" formControlName="vendor_type" id="vendor_type">
+                                            <option> Electricity </option>
+                                            <option> Telephone </option>
+                                            <option> DTH </option>
+                                            <option> Insurance </option>
+                                            <option> Tax </option>
+                                            <option> Credit Card </option>	
+                                            <option> Loan </option>
+                                        </select>
+    
+                                        <div class="validation-text"
+                                            *ngIf="vendor_type.invalid && vendor_type.errors.required && vendor_type.touched">Vendor Type is
+                                            required</div>
+                                    </div>
+        
+                                <div class="form-group ml-auto">
+                                    <label for="address">Address</label>
+                                    <input type="text" class="form-control" placeholder="Enter Address"
+                                        formControlName="address" id="address">
+                                    <div class="validation-text"
+                                        *ngIf="address.invalid && address.errors.required && address.touched">Address is required</div>
+                                </div>
+                            </div>
+    
+                            <div class="row">
+                                    <div class="form-group mr-5">
+                                        <label for="country">Country</label>
+                                        <input type="text" class="form-control" placeholder="Select Country"
+                                            formControlName="country" id="country">
+                                        <div class="validation-text"
+                                            *ngIf="country.invalid && country.errors.required && country.touched">Country
+                                            is required</div>
+                                    </div>
+            
+                                    <div class="form-group ml-auto">
+                                        <label for="state">State</label>
+                                        <input type="text" class="form-control" placeholder="Select State"
+                                            formControlName="state" id="state">
+                                        <div class="validation-text"
+                                            *ngIf="state.invalid && state.errors.required && state.touched">State is
+                                            required</div>
+                                    </div>
+                                </div>
+    
+                                
+                            <div class="row">
+                                <div class="form-group mr-5">
+                                    <label for="contact_number">Contact Number</label>
+                                    <input type="number" class="form-control" placeholder="Enter Contact Number"
+                                        formControlName="contact_number" id="contact_number">
+                                    <div class="validation-text"
+                                        *ngIf="contact_number.invalid && contact_number.errors.required && contact_number.touched">Conatct Number 
+                                        is required</div>
+                                </div>
+            
+                                <div class="form-group">
+                                        <label for="vendor_email">Vendor Email</label>
+                                        <input type="text" class="form-control" placeholder="Enter Email"
+                                            formControlName="vendor_email" id="vendor_email">
+                                        <div class="validation-text"
+                                            *ngIf="vendor_email.invalid && vendor_email.errors.required && vendor_email.touched">Email is
+                                            required</div>
+                                    </div>
+                                </div>
+                                
+    
+                                <div class="row">
+                                    <div class="form-group mr-5">
+                                        <label for="website">Website</label>
+                                        <input type="text" class="form-control" placeholder="Enter Website"
+                                            formControlName="website" id="website">
+                                        <div class="validation-text"
+                                            *ngIf="website.invalid && website.errors.required && website.touched">Website 
+                                            is required</div>
+                                    </div>
+                
+                                    <div class="form-group ml-auto">
+                                            <label for="cert_issue_date">Certificate Issue Date</label>
+                                            <input type="date" class="form-control" placeholder="Enter Issue Date"
+                                                formControlName="cert_issue_date" id="cert_issue_date">
+                                            <div class="validation-text"
+                                                *ngIf="cert_issue_date.invalid && cert_issue_date.errors.required && cert_issue_date.touched">Certificate issue date is
+                                                required</div>
+                                        </div>
+                                    </div>
+    
+    
+                                    <div class="row">
+                                        <div class="form-group mr-5">
+                                            <label for="cert_validity_date">Certificate Validity</label>
+                                            <input type="date" class="form-control" placeholder="Enter Validity Date"
+                                                formControlName="cert_validity_date" id="cert_validity_date">
+                                            <div class="validation-text"
+                                                *ngIf="cert_validity_date.invalid && cert_validity_date.errors.required && cert_validity_date.touched">Validity Date  
+                                                is required</div>
+                                        </div>
+                    
+                                        <div class="form-group ml-auto">
+                                                <label for="year_establishment">Year Establishment</label>
+                                                <input type="number" class="form-control" placeholder="Enter Year of Establishment"
+                                                    formControlName="year_establishment" id="year_establishment">
+                                                <div class="validation-text"
+                                                    *ngIf="year_establishment.invalid && year_establishment.errors.required && year_establishment.touched">Year Of Establishment is
+                                                    required</div>
+                                            </div>
+                                    </div>
+    
+                                    <div class="row">
+                                        <div class="form-group mr-5">
+                                            <label for="payment_gateway">Payment Gateway</label>
+                                            <select class="form-control" placeholder="Select Payment Gateway" formControlName="payment_gateway" id="payment_gateway">
+                                                    <option> Credit/Debit Card </option>
+                                                    <option> Internet Banking</option>
+                                                    <option> PayTm </option>
+                                                    <option> Google Pay </option>
+                                                    <option> E-wallet </option>
+                                            </select>
+                                            <div class="validation-text"
+                                                *ngIf="payment_gateway.invalid && payment_gateway.errors.required && payment_gateway.touched">Payment Gateway  
+                                                is required</div>
+                                        </div>
+                                    </div>    
+                        <!-- Password Details -->
+                        <div class="row">
+                            <div class="form-group mr-5">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" placeholder="Enter Password"
+                                    formControlName="password" id="password">
+                                <div class="validation-text"
+                                    *ngIf="password.invalid && password.errors.required && password.touched">Password is
+                                    required</div>
+                            </div>
+                            <!--Confirm Password-->
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" class="form-control" placeholder="Enter Confirm Password"
+                                    formControlName="confirmPassword" id="confirmPassword">
+                                <div class="validation-text"
+                                    *ngIf="confirmPassword.invalid && confirmPassword.errors.required && confirmPassword.touched">
+                                    Confirm the Password</div>
+                                <div class="validation-text" *ngIf="editForm.get('confirmPassword').hasError('nomatch')">
+                                    Password and Confirm Password do not match</div>
+                            </div>
+                        </div>
+                        <!-- Signup Button submit form-->
+                        <div class="row">
+                            <div>
+                            <button type="submit" class="btn btn-custom" [disabled]="!editForm.valid">Edit</button>
+                        </div>
+                        <!-- <div>
+                                <button type="reset" class="btn btn-custom ml-5" >Reset</button>
+                        </div> -->
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

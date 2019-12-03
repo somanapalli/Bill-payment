@@ -1,0 +1,19 @@
+<div class="row" mb-4>
+        <div class="col-12 jumbotron search-container ">
+            <div class="search-font">Find Services</div>
+            <form>
+                <div class="form-group">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="material-icons">payment</i>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" name="search" id="inlineFormInputGroup"
+                            placeholder="Search Services" (input)="onSearch()" [(ngModel)]="searchKey">
+                    </div>
+    
+                </div>
+            </form>
+        </div>
+    </div>

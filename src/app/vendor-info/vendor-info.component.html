@@ -1,0 +1,35 @@
+<div class="col-lg-3 col-md-6">
+        <div class="card mb-4" style="width: 16rem;" >
+            <!-- <img src="{{items.imageUrl}}" class="card-img-top"> -->
+            <div class="card-body" >
+    
+                <div class="row type">
+                     <b>   Service Type : {{vendors.vendor_type}} </b>                    
+                </div>
+
+                <div class="row vendor-name">
+                        Vendor Name: {{vendors.name}}            
+                </div>
+                     
+                <div class="row">
+                    Website: {{vendors.website}}            
+                </div>
+                    
+
+                <div class="row" style="text-align: left;">
+                    Payment Gateway: {{vendors.payment_gateway}}                    
+                </div>
+    
+                <div class = "row">
+                        <!-- <a (click)="showDetails()"> -->
+                            <button class="btn btn-custom ml-auto" [routerLink]="['/bill',vendors.uname]">Show Bill Details</button>
+                            <!-- </a> -->
+                </div>
+                    <!-- <button type="button" [routerLink]="['/item-edit',items.id]" class="btn btn-custom ml-auto">
+                        <i class="material-icons other_icon"> edit </i> Edit
+                    </button> -->
+    
+            </div>
+        </div>
+</div>
+   

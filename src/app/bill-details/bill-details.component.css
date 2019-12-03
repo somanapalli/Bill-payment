@@ -1,0 +1,40 @@
+.center{
+  margin:auto;
+}
+body {
+  display:flex;
+  align-items:center;
+}
+
+.button {
+  background-color: #555555; 
+  border: none;
+  color: white;
+  /* padding: 15px 32px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /* margin: 4px 2px; */
+  cursor: pointer;
+}
+
+
+.h2{
+  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+ td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {background-color: #f2f2f2;}

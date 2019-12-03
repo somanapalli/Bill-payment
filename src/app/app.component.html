@@ -1,0 +1,54 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark text-light">
+
+	<div class="navbar-header">
+		<a class="navbar-brand" href="#"><i class="material-icons">payment</i>
+			Bill Payment System</a>
+	</div>
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<ul class="navbar-nav  ml-auto">
+			<li class="nav-item">
+					<button class="btn btn-secondary " type="button" routerLink="home/" > Home </button>
+			</li> &nbsp; &nbsp;
+	
+			<li class="nav-item" *ngIf="loggedIn()">
+					<button class="btn btn-secondary " type="button"> <i class="material-icons icon text-white">person</i>
+						{{this.authService.username}} </button> &nbsp;&nbsp;
+			</li>
+
+			<li class="nav-item">
+					<button class="btn btn-secondary " routerLink="editvendor/" *ngIf="this.authService.vendor">Edit Details</button>
+					&nbsp;&nbsp;
+			</li>
+
+			<li class="nav-item" *ngIf="loggedIn()" (click)="this.authService.logout()">
+				<button class="btn btn-secondary " routerLink="Menu/" (click)="exit()">Logout</button>
+			</li>
+			<li class="nav-item" *ngIf ="!loggedIn()">
+				<button class="btn btn-secondary " routerLink="login/">Login</button> &nbsp;&nbsp;
+      </li>
+      
+			<li class="nav-item " *ngIf ="!loggedIn()">
+						
+					<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						SignUp
+							</button>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+							  <a class="dropdown-item" routerLink="signup/">User</a>
+							  <a class="dropdown-item" routerLink="signupvendor/">Vendor</a>
+							</div>
+						  </div>
+		
+				 
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<router-outlet></router-outlet>

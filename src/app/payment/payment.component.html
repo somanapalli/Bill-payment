@@ -1,0 +1,160 @@
+<div class="success" *ngIf="paid" >
+    
+    <H2> Bill Paid Success</H2>
+
+</div>
+
+
+<div class="col-lg-3 col-md-6 center" *ngIf="!paid">
+<h2>Enter Payment Details</h2>
+<form ngNativeValidate (submit)="onSubmit()">
+        <div class="card mb-4" style="width: 20rem;" *ngIf="items.vendor.payment_gateway==='Credit/Debit Card'">
+            <div class="card-body">
+                <div class="row mt-1 col form-group">
+                    <b>Enter Credit/debit Card Details:</b>
+                </div>
+                
+                <div class="row mt-1 col form-group">
+                    Card number:<input type="number" required>
+                </div>
+                
+                <div class="row mt-1 col form-group">
+                    Name on Card: <input type = "text" required>
+                </div>
+
+                <div class="row mt-1 col ">
+                    <div class="mr-auto form-group">
+                        Enter Expiry date: <input type="month" min="2018-03" required>
+                    </div>
+                    <div class="mr-auto form-group">    
+                        Enter cvv Number: <input type = "number"  min="000" max="999" required>
+                    </div>
+                </div>
+                <div class="row mt-1 col">
+                        Bill Amt. :{{items.amt}}
+                </div>
+                <div class="row mt-1 col ">
+                        <button type="submit" [disabled]="!myForm.form.valid">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4" style="width: 20rem;" *ngIf="items.vendor.payment_gateway==='Internet Banking'">
+            <div class="card-body">
+                <div class="row mt-1 col form-group">
+                    <b>Enter Internet Banking Details:</b>
+                </div>
+                
+                <div class="row mt-1 col form-group">
+                    Username<input type="text" required>
+                </div>
+                
+                <div class="row mt-1 col form-group">
+                    Transaction Password: <input type = "text" required>
+                </div>
+                <div class="row mt-1 col">
+                        Bill Amt. :{{items.amt}}
+                </div>
+                <div class="row mt-1 col ">
+                        <button type="submit" [disabled]="!myForm.form.valid">Submit</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card mb-4" style="width: 20rem;" *ngIf="items.vendor.payment_gateway==='PayTm'">
+                <div class="card-body">
+                    <div class="row mt-1 col form-group">
+                        <b>Enter PayTm Details:</b>
+                    </div>
+                    
+                    <div class="row mt-1 col form-group">
+                        Number<input type="text" required>
+                    </div>
+                    
+                    <div class="row mt-1 col form-group">
+                        Password: <input type = "text" required>
+                    </div>
+                    <div class="row mt-1 col">
+                            Bill Amt. :{{items.amt}}
+                    </div>
+                    <div class="row mt-1 col ">
+                            <button type="submit" [disabled]="!myForm.form.valid">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+
+            
+        <div class="card mb-4" style="width: 20rem;" *ngIf="items.vendor.payment_gateway==='PayTm'">
+                <div class="card-body">
+                    <div class="row mt-1 col form-group">
+                        <b>Enter PayTm Details:</b>
+                    </div>
+                    
+                    <div class="row mt-1 col form-group">
+                        Number<input type="text" required>
+                    </div>
+                    
+                    <div class="row mt-1 col form-group">
+                        Password: <input type = "text" required>
+                    </div>
+                    <div class="row mt-1 col">
+                            Bill Amt. :{{items.amt}}
+                    </div>
+                    <div class="row mt-1 col ">
+                            <button type="submit" [disabled]="!myForm.form.valid">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+
+                        
+        <div class="card mb-4" style="width: 20rem;" *ngIf="items.vendor.payment_gateway==='Google Pay'">
+                <div class="card-body">
+                    <div class="row mt-1 col form-group">
+                        <b>Enter Google Pay Details:</b>
+                    </div>
+                    
+                    <div class="row mt-1 col form-group">
+                        UPI Id<input type="text" required>
+                    </div>
+                    
+                    <div class="row mt-1 col form-group">
+                        Password: <input type = "text" required>
+                    </div>
+                    <div class="row mt-1 col">
+                            Bill Amt. :{{items.amt}}
+                    </div>
+                    <div class="row mt-1 col ">
+                            <button type="submit" [disabled]="!myForm.form.valid">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card mb-4" style="width: 20rem;" *ngIf="items.vendor.payment_gateway==='E-wallet'">
+                    <div class="card-body">
+                        <div class="row mt-1 col form-group">
+                            <b>Enter Google Pay Details:</b>
+                        </div>
+                        
+                        <div class="row mt-1 col form-group">
+                            Wallet Id<input type="text" required>
+                        </div>
+                        
+                        <div class="row mt-1 col form-group">
+                             Transaction Password: <input type = "text" required>
+                        </div>
+                        <div class="row mt-1 col">
+                                Bill Amt. :{{items.amt}}
+                        </div>
+                        <div class="row mt-1 col ">
+                                <button type="submit" [disabled]="!myForm.form.valid">Submit</button>
+                        </div>
+                    </div>
+                </div>
+    
+</form>
+</div>
+

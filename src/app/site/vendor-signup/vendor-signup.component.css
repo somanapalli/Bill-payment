@@ -1,0 +1,32 @@
+/* include stylesheet for truYum */
+.navbar {
+	background-color: #FF4500;
+}
+
+body {
+	font-family: 'Encode Sans'
+}
+
+.material-icons {
+	vertical-align: middle;
+}
+
+.space {
+	padding: 30px;
+}
+
+.btn-custom {
+	color: #fff;
+	background-color: #0394fc;
+	border-color:#0394fc;
+}
+
+
+.validation-text {
+	color: red;
+	font-size: 12px;
+}
+
+.option {
+	display: inline-block; 
+  }
